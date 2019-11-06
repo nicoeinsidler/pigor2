@@ -13,8 +13,6 @@ def read(file_path, pos_file = None) -> pd.DataFrame:
 
     .. todo:: Using meta or storing it?
 
-    .. todo:: Fixing the desc => hardcoding?
-
     .. todo:: Adding doctests to :code:`read()`
 
     .. note:: :code:`readlines()` not really performant if files get too large.
