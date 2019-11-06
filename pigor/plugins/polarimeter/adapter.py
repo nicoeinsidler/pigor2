@@ -2,7 +2,7 @@ import pathlib
 import pandas as pd
 import fire
 
-def read(file_path, pos_file = None) -> pd.DataFrame:
+def read(file_path: pathlib.Path, pos_file: pathlib.Path = None) -> pd.DataFrame:
     """ Reads a raw measurement data file and turns it into a pandas.DataFrame.
     
     :param file_path: path to raw data file
@@ -16,7 +16,7 @@ def read(file_path, pos_file = None) -> pd.DataFrame:
 
     .. note:: :code:`readlines()` not really performant if files get too large.
 
-    >>> print(read(pathlib.Path('../../testfiles/polarimeter/2019_02_20_1325_dc2x_scan.dat')))
+    >>> print(read(pathlib.Path('../../../testfiles/polarimeter/2019_02_20_1325_dc2x_scan.dat')))
         I Scan (mA)  Detector (cnts)  Monitor Max (cnts/s)  Monitor Min (cnts/s)  Norm (1/s)  Err (1/s)  FlippRatio  ErrFlippRatio
     0       -1500.0           3748.8                   5.0                   0.0   22.858537   1.823577    0.004225       0.000380
     1       -1350.0           2703.8                   4.0                   0.0   16.190419   1.290964    0.005965       0.000537
