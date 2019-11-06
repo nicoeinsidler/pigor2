@@ -129,6 +129,8 @@ PIGORv2 will have the following file structure:
     pigor.py
     config.json
 
+.. todo:: Update file structure.
+
 Each experiment will have its own plugin. If any plugin does not provide a template file, the template HTML file in the `plugins` folder will be used instead.
 
 The :code:`functions.py` in :code:`plugins/` is used to provide basic functions for every experiment, which will be loaded *additionally*.
