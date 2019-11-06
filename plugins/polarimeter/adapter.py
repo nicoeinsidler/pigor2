@@ -14,8 +14,6 @@ def read(file_path, pos_file = None) -> pd.DataFrame:
 
     .. todo:: Using meta or storing it?
 
-    .. todo:: Adding doctests to :code:`read()`
-
     .. note:: :code:`readlines()` not really performant if files get too large.
 
     >>> print(read(pathlib.Path('../../testfiles/polarimeter/2019_02_20_1325_dc2x_scan.dat')))
