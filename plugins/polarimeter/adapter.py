@@ -1,5 +1,6 @@
 import pathlib
 import pandas as pd
+import fire
 
 def read(file_path, pos_file = None) -> pd.DataFrame:
     """ Reads a raw measurement data file and turns it into a pandas.DataFrame.
@@ -78,6 +79,4 @@ def read(file_path, pos_file = None) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    p = pathlib.Path('../../testfiles/polarimeter/2019_02_20_1325_dc2x_scan.dat')
-    o = read(p)
-    print(o)
+    fire.Fire(read)
