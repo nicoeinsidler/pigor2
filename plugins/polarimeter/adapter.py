@@ -79,4 +79,8 @@ def read(file_path, pos_file = None) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
+    # TODO: remove for production
+    import doctest
+    doctest.testmod()
+
     fire.Fire(read)
