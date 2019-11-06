@@ -3,7 +3,7 @@
 import pathlib
 import pkgutil
 
-import plugins
+import .plugins
 
 # get all available experiments in plugins
 experiments_list = []
