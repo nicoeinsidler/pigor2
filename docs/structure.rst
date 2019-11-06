@@ -98,6 +98,8 @@ Programmatically speaking these two options manifest in two decorators, register
 - :code:`@alter_data`: Checks if wrapped function returns an array of data and adds it into new column of the :class:`pandas.DataFrame`. If the number of entries in the given array equals the numbers of rows in the :class:`pandas.DataFrame`, it is written as a new column, if the number is smaller, the data points are doubled in order to be able to write a new column, if the number is greater, all data points exeeding will be cut.
 - :code:`@extra_info`: Registers the function, so that it will be run before exporting the meta data with Jinja2.
 
+.. note:: In order to use the decorators, the following module must be imported: :code:`import ..lib.decorators`.
+
 
 File System Manifestation
 -------------------------
