@@ -106,6 +106,16 @@ Programmatically speaking these two options manifest in two decorators, register
 .. note:: In order to use the decorators, the following module must be imported: :code:`import ..library.decorators`.
 
 
+Registering a Plugin
+--------------------
+
+In order for PIGOR to be able to find (and import) a plugin, an additional entry in the ``plugins/__init__.py`` file has to be created. If the plugin's name is 'experiment1' for example, the line to be added is:
+
+.. code::
+
+    from .experiment1 import *
+
+
 File System Manifestation
 -------------------------
 
