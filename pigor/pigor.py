@@ -31,7 +31,7 @@ def is_plugin(path: pathlib.Path) -> bool:
     
     # try to import checking criteria 1) & 2)
     try:
-        plugin = importlib.import_module(path)
+        plugin = import_module(path)
     except ModuleNotFoundError:
         plugin = None
         result = False
