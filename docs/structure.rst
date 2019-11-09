@@ -64,7 +64,12 @@ __init__.py
 
 Whis will make the plugin a Python package. At some point PIGOR will import the plugin (the Python package) and implicitly executed.
 
-For most plugins this file is empty.
+For most plugins this file only contains the relative import statements. If your plugin is called 'experiment1' and possesses a ``plugins/experiment1/functions.py`` file, the ``__init__.py`` file will look like this:
+
+.. code::
+
+    from .functions import *
+    from .adapter import *
 
 .. note:: The ``__init__.py`` file in the parent plugin directory should not be removed or touched when writing a new plugin for PIGOR as it creates a list of all plugins available to use.
 
