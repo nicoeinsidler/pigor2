@@ -27,7 +27,7 @@ def is_plugin(path: pathlib.Path) -> bool:
     # believe path points to module if not otherwise proven wrong
     result = True
 
-    import importlib
+    from importlib import import_module
     
     # try to import checking criteria 1) & 2)
     try:
