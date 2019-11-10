@@ -152,3 +152,4 @@ The :code:`functions.py` in :code:`plugins/` is used to provide basic functions 
 
 .. todo:: Custom fit functions will be written in functions, but need an extra decorator for registering them.
 
+
