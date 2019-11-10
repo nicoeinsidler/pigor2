@@ -49,6 +49,13 @@ Tasks
 - exporting a meta data file via Jinja2
 - peforming a fit with lmfit
 
+Configuration
+'''''''''''''
+
+.. todo:: Setup a great configuration. Maybe using: https://github.com/MartinThoma/cfg_load
+
+
+
 Plugins
 -------
 
