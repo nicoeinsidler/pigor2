@@ -38,3 +38,23 @@ def alter_data(func):
 # }
 # a = pandas.DataFrame.from_dict(t)
 # print(test_alter_data(a))
+
+registered_functions = dict()
+
+def extra_info(func):
+
+    def wrapper(data: pandas.DataFrame, *args, **kwargs):
+        result = func(data, *args, **kwargs)
+        print(func.__name__)
+        registered_functions[func.__name__] = func
+        return result
+    return wrapper
+
+@extra_info
+def test(data: pandas.DataFrame):
+    some_var = 1
+    return some_var
+
+print(registered_functions)
+test('hallo')
+print(registered_functions)
