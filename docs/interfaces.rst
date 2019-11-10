@@ -41,5 +41,13 @@ Jupyter
     # plots inline
     m1.plot()
 
+    # functions in functions.py are exposed by @alter_data and @extra_info
+    # where @alter_data alters the data frame and @extra_info returns something
+    m1.contrast()
+
+    # This function can be used to find all files. When no argument is given,
+    # the arguments are taken from config.json
+    files = find_all_files(recursive=True, file_extention='.dat')
+
 
 
