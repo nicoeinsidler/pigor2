@@ -1,7 +1,9 @@
 import re
 import sys
+from types import FunctionType
 import inspect
 import pathlib
+import importlib
 
 PATH_TO_PLUGINS = pathlib.Path('../..').resolve().absolute()
 if str(PATH_TO_PLUGINS) not in sys.path:
@@ -24,6 +26,3 @@ print(dir(test))
 
 def render(template: pathlib.Path, plot_function: FunctionType, extra_info_functions: [FunctionType]):
     pass
-
-a = [entry for entry in p.glob('*') if entry.is_dir() and not re.match(PYTHON_DIR_PATTERN, entry.name)]
-print(a)
