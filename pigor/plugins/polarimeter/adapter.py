@@ -1,6 +1,5 @@
 import pathlib
 import pandas as pd
-import fire
 
 def read(file_path: pathlib.Path, pos_file: pathlib.Path = None) -> pd.DataFrame:
     """ Reads a raw measurement data file and turns it into a pandas.DataFrame.
@@ -81,4 +80,5 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
 
+    import fire
     fire.Fire(read)
