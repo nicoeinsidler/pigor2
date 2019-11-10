@@ -1,6 +1,7 @@
 import pathlib
 import pandas as pd
 
+
 def read(file_path: pathlib.Path) -> pd.DataFrame:
     """ Reads a raw measurement data file and turns it into a pandas.DataFrame.
     

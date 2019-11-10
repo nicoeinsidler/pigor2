@@ -1,7 +1,9 @@
 import pathlib
 import pandas as pd
 
-def read(file_path: pathlib.Path, pos_file: pathlib.Path = None) -> pd.DataFrame:
+
+def read(file_path: pathlib.Path,
+         pos_file: pathlib.Path = None) -> pd.DataFrame:
     """ Reads a raw measurement data file and turns it into a pandas.DataFrame.
     
     :param file_path: path to raw data file
@@ -57,19 +59,14 @@ def read(file_path: pathlib.Path, pos_file: pathlib.Path = None) -> pd.DataFrame
 
     # hardcoded variant, because original heading not optimal
     desc = [
-        'I Scan (mA)',
-        'Detector (cnts)',
-        'Monitor Max (cnts/s)',
-        'Monitor Min (cnts/s)',
-        'Norm (1/s)',
-        'Err (1/s)',
-        'FlippRatio',
+        'I Scan (mA)', 'Detector (cnts)', 'Monitor Max (cnts/s)',
+        'Monitor Min (cnts/s)', 'Norm (1/s)', 'Err (1/s)', 'FlippRatio',
         'ErrFlippRatio'
     ]
     data = [[float(number) for number in line.split()] for line in data]
 
     data_dict = dict()
-    for k,v in zip(desc, zip(*data)):
+    for k, v in zip(desc, zip(*data)):
         data_dict[k] = v
 
     return pd.DataFrame(data_dict)

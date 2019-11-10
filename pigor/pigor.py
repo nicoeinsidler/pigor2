@@ -15,7 +15,11 @@ PYTHON_DIR_PATTERN = re.compile('__[A-Za-z0-9._-]*__')
 # path were all plugins are located
 PATH_TO_PLUGINS = pathlib.Path('./plugins')
 
-all_plugins = [entry for entry in PATH_TO_PLUGINS.glob('*') if entry.is_dir() and not re.match(PYTHON_DIR_PATTERN, entry.name)]
+all_plugins = [
+    entry for entry in PATH_TO_PLUGINS.glob('*')
+    if entry.is_dir() and not re.match(PYTHON_DIR_PATTERN, entry.name)
+]
+
 
 def is_plugin(path: pathlib.Path) -> bool:
     """ Verifies if path matches all criteria for a plugin:
@@ -35,8 +39,6 @@ def is_plugin(path: pathlib.Path) -> bool:
     # believe path points to module if not otherwise proven wrong
     result = True
 
-    # from importlib import import_module
-    
     # try to import checking criteria 1) & 2)
     try:
         plugin = importlib.import_module('pigor.plugins.' + path.name)
@@ -47,10 +49,10 @@ def is_plugin(path: pathlib.Path) -> bool:
     # see if adapter.py exists, cirterion 3)
     if not path.joinpath('adapter.py').exists():
         result = False
-    
+
     # check for the existance of read() function
     if plugin and not 'read' in dir(plugin):
-        result = False 
+        result = False
 
     return result
 
@@ -80,8 +82,10 @@ class Measurement(object):
 
         # check if plugin is valid plugin
         if not is_plugin(PATH_TO_PLUGINS.joinpath(plugin)):
-            raise ModuleNotFoundError('Either the plugin does not exist or it is missing something. Please refer to the docs (pigor.org/2) for more help.')
-        
+            raise ModuleNotFoundError(
+                'Either the plugin does not exist or it is missing something. Please refer to the docs (pigor.org/2) for more help.'
+            )
+
         # import plugin
         self.plugin = importlib.import_module('pigor.plugins.' + plugin)
 
@@ -90,10 +94,11 @@ class Measurement(object):
 
 
 if __name__ == "__main__":
-    p = pathlib.Path('../testfiles/polarimeter/2018-11-22-1125-degree-of-polarisation.dat')
+    p = pathlib.Path(
+        '../testfiles/polarimeter/2018-11-22-1125-degree-of-polarisation.dat')
     plugin = 'polarimeter'
     m = Measurement(p, plugin)
     print(m.data)
-    
+
     # import fire
     # fire.Fire(Measurement)
