@@ -16,7 +16,14 @@ p = pathlib.Path('../plugins')
 if p.is_dir():
     print(p)
 
-PYTHON_DIR_PATTERN = re.compile('__[A-Za-z0-9._-]*__')
+
+
+
+test = importlib.import_module('pigor.plugins.polarimeter')
+print(dir(test))
+
+def render(template: pathlib.Path, plot_function: FunctionType, extra_info_functions: [FunctionType]):
+    pass
 
 a = [entry for entry in p.glob('*') if entry.is_dir() and not re.match(PYTHON_DIR_PATTERN, entry.name)]
 print(a)
