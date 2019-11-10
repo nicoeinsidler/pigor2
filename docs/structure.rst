@@ -36,7 +36,7 @@ Usages
 
     - CLI with arguments: take the arguments (first one is the file to read) and create the plot image and the export meta file
     - CLI without arguments: starts a minimal interface to batch process files
-- Jupyter Lab & Notebook: when PIGOR is loaded as a module it provides the user with some simple code to create a :class:`pandas.DataFrame` object act upon it
+- Jupyter Lab & Notebook: when PIGOR is loaded as a module it provides the user with some simple code to create a :class:`pandas.DataFrame` object to act upon it
 
 .. note:: The CLI interface allows the user to create custom batch scripts.
 
