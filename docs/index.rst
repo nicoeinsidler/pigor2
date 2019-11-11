@@ -12,7 +12,7 @@ Pigor is a lightweight analysis tool for the the polarimeter instrument NEPTUN b
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Contents:
 
     structure
@@ -20,6 +20,7 @@ Pigor is a lightweight analysis tool for the the polarimeter instrument NEPTUN b
     interfaces
     new-plugin
     functions-py
+    pigor
     todo
 
 
