@@ -10,10 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
@@ -23,7 +22,6 @@ author = 'Nico Einsidler'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -50,14 +48,12 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -68,7 +64,6 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'PIGORdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -94,20 +89,15 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PIGOR.tex', 'PIGOR Documentation',
-     'Nico Einsidler', 'manual'),
+    (master_doc, 'PIGOR.tex', 'PIGOR Documentation', 'Nico Einsidler',
+     'manual'),
 ]
-
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'pigor', 'PIGOR Documentation',
-     [author], 1)
-]
-
+man_pages = [(master_doc, 'pigor', 'PIGOR Documentation', [author], 1)]
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -115,11 +105,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PIGOR', 'PIGOR Documentation',
-     author, 'PIGOR', 'One line description of project.',
-     'Miscellaneous'),
+    (master_doc, 'PIGOR', 'PIGOR Documentation', author, 'PIGOR',
+     'One line description of project.', 'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -138,22 +126,21 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-
 # -- Extension configuration -------------------------------------------------
-
 
 # -- Options for todo extension ----------------------------------------------
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-
 # -- Including __init__() ----------------------------------------------------
+
 
 def skip(app, what, name, obj, would_skip, options):
     if name == "__init__":
         return False
     return would_skip
+
 
 def setup(app):
     app.connect("autodoc-skip-member", skip)
