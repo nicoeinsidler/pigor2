@@ -21,6 +21,7 @@ Pigor is a lightweight analysis tool for the the polarimeter instrument NEPTUN b
     new-plugin
     functions-py
     pigor
+    data-structure-config
     todo
 
 
