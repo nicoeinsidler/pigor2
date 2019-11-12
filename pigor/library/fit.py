@@ -19,3 +19,5 @@ def fit(data: pandas.DataFrame, fit_config: dict) -> [lmfit.model.ModelResult]:
     :return: list of finished fits
     :rtype: [lmfit.model.ModelResult]
     """
+    # TODO!
+    x = fit_config
