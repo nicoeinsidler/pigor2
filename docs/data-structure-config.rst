@@ -12,7 +12,7 @@ Example:
             "column3": {
                 "fit": {
                     "model": "lmfit.models.LinearModel"
-                }
+                },
                 "plot": {
                     "color": "black"
                 }
