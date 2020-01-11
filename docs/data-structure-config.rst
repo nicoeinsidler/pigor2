@@ -31,7 +31,7 @@ Example:
 Structure
 ---------
 
-.. code;; json
+.. code:: json
 
     {
         COLUMN: {
