@@ -92,6 +92,11 @@ class Measurement(object):
         # import data into data frame
         self.data = self.plugin.read(self.file_path.absolute(), **kwargs)
 
+    def plot(self, **kwargs) -> None:
+        """Plot the data as defined in the plot function of the plugin.
+        """
+        self.plugin.plot(self.data)
+
 
 if __name__ == "__main__":
     p = pathlib.Path(
