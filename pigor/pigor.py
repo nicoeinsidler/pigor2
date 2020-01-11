@@ -83,7 +83,7 @@ class Measurement(object):
         # check if plugin is valid plugin
         if not is_plugin(PATH_TO_PLUGINS.joinpath(plugin)):
             raise ModuleNotFoundError(
-                'Either the plugin does not exist or it is missing something. Please refer to the docs (pigor.org/2) for more help.'
+                f'Either the plugin "{plugin}" does not exist or it is missing something. Please refer to the docs (pigor.org/2) for more help.'
             )
 
         # import plugin
