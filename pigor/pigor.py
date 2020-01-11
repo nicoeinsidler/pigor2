@@ -10,6 +10,7 @@ PIGOR_ROOT_PATH = pathlib.Path('../').resolve().absolute()
 if str(PIGOR_ROOT_PATH) not in sys.path:
     sys.path.insert(0, str(PIGOR_ROOT_PATH))
 
+# import library functions
 from pigor.library.functions import is_plugin
 
 # regex pattern to identify __pychache__
