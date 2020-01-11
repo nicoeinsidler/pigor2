@@ -1,3 +1,7 @@
+import pathlib
+import importlib
+
+
 def is_plugin(path: pathlib.Path) -> bool:
     """ Verifies if path matches all criteria for a plugin:
 
