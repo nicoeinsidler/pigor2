@@ -79,7 +79,7 @@ if __name__ == "__main__":
         '../testfiles/polarimeter/2018-11-22-1125-degree-of-polarisation.dat')
     plugin = 'polarimeter'
     m = Measurement(p, plugin)
-    # print(m.data)
+    print(m.data)
     # m.decorator_test()
 
     # import fire
