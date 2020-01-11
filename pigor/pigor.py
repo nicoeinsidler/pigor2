@@ -98,7 +98,12 @@ class Measurement(object):
         :return:                    returns the path to the plot image
         :rtype:                     pathlib.Path
         """
-        self.plugin.plot(self.data)
+        return self.plugin.plot(self.data)
+
+    def decorator_test(self):
+        print(
+            'trying to find all decorated functions of the functions.py in the plugin'
+        )
 
 
 if __name__ == "__main__":
