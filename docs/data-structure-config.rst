@@ -38,23 +38,28 @@ Structure
 .. code:: json
 
     {
-        COLUMN: {
-            COLUMN: {
-                FEATURE : SETTING
+        COLUMN (X): {
+            COLUMN (Y): {
+                ROUTINE: {
+                    FEATURE : SETTING
+                }
             }
         }
     }
 
-At first all columns are listed that are 
+At first all columns are listed that are used for an x-axis. That means that PIGOR will produce as many plots as there are columns specified. For each of those plots (against one specified x-axis) a list of y-axes follows.
+
+.. note:: When more then one plot is produced, the naming convention for each plot image will be: ``FILENAME-XCOLUMNNAME``.
+
+``ROUTINE`` defines the group for which the ``FEATURE`` is meant for. This corresponds to a function. In most cases it will be "plot" and "fit".
 
 
-Valid Entries
--------------
+.. Valid Entries
+.. -------------
 
-- ``COLUMN``: Should be of type ``str`` containing, either the index number of the column or the unambiguous name of the column.
-- ``FEATURE``: Here is a list of all available features. Additional features can be registered via the ``@alter_data`` 
+.. - ``COLUMN``: Should be of type ``str`` containing, either the index number of the column or the unambiguous name of the column.
+.. - ``FEATURE``: Here is a list of all available features. Additional features can be registered via the ``@alter_data`` 
 
-    - 
 
 
 
