@@ -13,6 +13,9 @@ Example:
                 "fit": {
                     "model": "lmfit.models.LinearModel"
                 }
+                "plot": {
+                    "color": "black"
+                }
             },
             "column5": {}
         },
