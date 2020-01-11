@@ -8,7 +8,8 @@ def is_plugin(path: pathlib.Path) -> bool:
     1. must be a directory
     2. directory must contain an __init__.py file
     3. must have an adapter.py file
-    4 :code:`read(file_path: pathlib.Path) -> pandas.DataFrame` function in adapter.py 
+    4 :code:`read(file_path: pathlib.Path) -> pandas.DataFrame` function in adapter.py
+
     
     :param path: path to the plugin folder
     :type path: pathlib.Path
@@ -16,6 +17,7 @@ def is_plugin(path: pathlib.Path) -> bool:
     :rtype: bool
 
     .. todo:: Check if read function takes a pathlib.Path object as first argument and returns a pandas data frame object.
+    
     """
     # believe path points to module if not otherwise proven wrong
     result = True
