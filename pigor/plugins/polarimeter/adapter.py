@@ -41,6 +41,10 @@ def read(file_path: pathlib.Path,
     19       1350.0           2738.8                   4.0                   0.0   18.018421   1.501495    0.005359       0.000500
     20       1500.0           3835.8                   7.0                   0.0   23.824845   1.916661    0.004053       0.000367
     """
+    # make sure every file path is pathlib.Path (in case this adapter is used with Fire)
+    if type(file_path) == str: file_path = pathlib.Path(file_path)
+    if type(pos_file) == str: file_path = pathlib.Path(pos_file)
+
     # check if file exists
     if not file_path.exists:
         raise FileNotFoundError
