@@ -20,8 +20,8 @@ PATH_TO_PLUGINS = pathlib.Path('./plugins')
 
 # list of all available plugins
 all_plugins = [
-    entry for entry in PATH_TO_PLUGINS.glob('*')
-    if entry.is_dir() and not re.match(PYTHON_DIR_PATTERN, entry.name)
+    entry for entry in PATH_TO_PLUGINS.glob('*') if entry.is_dir()
+    and not re.match(PYTHON_DIR_PATTERN, entry.name) and is_plugin(entry)
 ]
 
 
