@@ -1,5 +1,8 @@
 import pandas
 
+registered_functions = dict()
+
+
 def alter_data(func):
     """ Decorator to modify data in dataframe. The modified data will then be stored in a new column inside the data frame.
     
@@ -18,12 +21,14 @@ def alter_data(func):
         for k, v in new_data.items():
             # if newly created data is not enough pad it with zeros
             if data_length > len(v):
-                v.extend([0] * (data_length-len(v)))
+                v.extend([0] * (data_length - len(v)))
 
             data[k] = v[0:data_length]
 
         return data
+
     return wrapper
+
 
 # @alter_data
 # def test_alter_data(data: pandas.DataFrame) -> dict:
@@ -39,21 +44,22 @@ def alter_data(func):
 # a = pandas.DataFrame.from_dict(t)
 # print(test_alter_data(a))
 
-registered_functions = dict()
 
 def extra_info(func):
-
     def wrapper(data: pandas.DataFrame, *args, **kwargs):
         result = func(data, *args, **kwargs)
-        print(func.__name__)
+
         registered_functions[func.__name__] = func
         return result
+
     return wrapper
+
 
 @extra_info
 def test(data: pandas.DataFrame):
     some_var = 1
     return some_var
+
 
 print(registered_functions)
 test('hallo')
