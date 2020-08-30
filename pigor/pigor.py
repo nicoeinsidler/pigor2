@@ -75,11 +75,18 @@ class Measurement(object):
 
 
 if __name__ == "__main__":
+    print(f"\navailable plugins:\n")
+    for plugin in all_plugins:
+        print(f'  - {plugin.name}')
+    print('\n')
+
     p = pathlib.Path(
         '../testfiles/polarimeter/2018-11-22-1125-degree-of-polarisation.dat')
     plugin = 'polarimeter'
     m = Measurement(p, plugin)
     print(m.data)
+
+    # m.plot()
     # m.decorator_test()
 
     # import fire
